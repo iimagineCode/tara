@@ -1,0 +1,74 @@
+body { font-family: Consolas, monospace; }
+
+textarea {
+ background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 600px;
+ height: 200px;
+ font: normal 14px Courier;
+ line-height: 25px;
+ padding: 2px 10px;
+ border: solid 1px #ddd;
+}
+
+/*general classes */
+.table-scroll-200{
+    height:200px;
+    overflow: auto;
+}
+
+.m-bot-20{
+    margin-bottom: 20px;
+}
+
+.jumbotron.main{
+    min-height: 330px;
+}
+
+/* ANIMATIONS */
+/* Typing css animation */
+/*#messages > table tr:first-child > td > p.typed
+{
+    width: 30em;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 6s steps(60, end);    
+    -moz-animation: typing 6s steps(60, end);
+    animation: type 6s steps(60, end);
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+@-moz-keyframes type {
+    from { width: 0 }
+}*/
+/* END Typing like css animation */
+
+/* Typed.js Cursor */
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+/* END Typed.js Cursor */

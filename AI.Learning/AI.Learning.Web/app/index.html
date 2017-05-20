@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron main">
+                <h1>Tara.</h1> 
+                <code>Transactional Audit Reformation Assistant</code>
+                <p class="intro"></p> 
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-8 m-bot-20">
+                <textarea cols="100" rows="10" data-bind="value: message.content" placeholder="Type a message to Tara here.."></textarea>
+                <button id="addMessage" type="button" data-bind="click: addMessage">Send</button>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="md-col-12">
+                <div id="messages" class="table-scroll-200">
+                    <table class="table table-striped">
+                        <tbody data-bind="foreach: messages">  
+                            <tr>
+                                <td ><span data-bind="text: createdBy"></span>:</td><td><p class="typed" data-bind="text: content"></p><td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+        </div>        
+    </div>    
+    <script src="bower_components/knockout/dist/knockout.debug.js"></script>    
+    <script src="bower_components/jquery/dist/jquery.js"></script>    
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/typed.js/js/typed.js"></script>
+    <script>
+        $(function(){
+            var vm = {
+                messages: ko.observableArray([{createdBy:'Tara', content: "Hi, my name is Tara. Let's get started."}]),
+                message: { 
+                    createdBy:ko.observable('Me'), 
+                    content: ko.observable('') 
+                    },
+                addMessage: function(){
+                    this.messages.push({
+                        createdBy: this.message.createdBy(), 
+                        content: this.message.content()
+                    });
+                    //TODO: send message to tara service
+                },
+                addResponse: function(){
+                    //TODO: add tara responses
+                }
+            };
+            ko.applyBindings(vm);
+
+            $(".intro").typed({
+                strings: [
+                    "Meet Tara.", 
+                    "She knows things.",
+                    "Like how to direct you to knowledge based articles.",
+                    "Or information about your Client's engagements.",
+                    "Or something as simple as defining the word audit.",
+                    "Tara simplifies your work flow by bringing information from numerous sources like Canvas, Atlas, and Helix to a single simple user friendly interface."
+                ],
+                typeSpeed: 0,
+                callback: function(){
+                    //TODO: any callbacks once complete
+                }
+		    });
+
+            document.getElementById("addMessage").addEventListener("click", function(){
+                document.getElementById('messages').scrollTop = 9999999;
+            });
+        });        
+
+    </script>
+</body>
+</html>
