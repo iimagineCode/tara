@@ -7,6 +7,7 @@ namespace AI.Learning.API.Models
 {
     public class Message
     {
-        public string   Content { get; set; }      
+        public string CreatedBy { get; set; }
+        public string Content { get; set; }      
     }
 }

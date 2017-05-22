@@ -179,6 +179,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\tarasvc - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,8 +193,14 @@
   <ItemGroup>
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Hubs\LearningHub.cs" />
+    <Compile Include="Interfaces\IDictionaryService.cs" />
+    <Compile Include="Models\DictionaryResult.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\ResponseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AtlasService.cs" />
+    <Compile Include="Services\CanvasService.cs" />
+    <Compile Include="Services\OxfordService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
